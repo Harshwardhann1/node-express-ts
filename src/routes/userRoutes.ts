@@ -2,10 +2,10 @@ import {Router} from 'express';
 import { userController } from '../controllers/userController';
 
 const router = Router();
-router.post('/user', userController.createUser);
-router.get('/user', userController.getUser)
-router.get('/user/:fname', userController.getUserByName)
-router.delete('/user', userController.deleteUser)
+router.post('/create', userController.createUser);
+router.get('/list', userController.getUser)
+router.get('/getOne', userController.getUserByName)
+router.delete('/delete', userController.deleteUser)
 
 
 

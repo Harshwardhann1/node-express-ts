@@ -5,6 +5,7 @@ export class userController {
     static async createUser(req: Request, res: Response) {
         try{
             const user = await UserModel.create(req.body);
+            console.log('create');
             res.status(201).send(user)
         } catch (error) {
             res.status(500).json({message: 'Internal server error'})

@@ -9,9 +9,9 @@ export interface User {
 }
 
 export class UserModel {
-    static async create(user: User): Promise<User> {
+   static async create(user: User): Promise<User> {
         const {fname, lname, email, contact} = user;
-        const result = await client.query(`INSERT INTO user(fname, lname, email, contact) VALUES ($1, $2, $3, $4) RETURNING *`,   [fname, lname, email, contact]);
+        const result = await client.query(`INSERT INTO user(fname, lname, email, contact) VALUES ('Harsh', 'Wardhan', 'abc', '123456') RETURNING *`);
         return result.rows[0];
     }
 
