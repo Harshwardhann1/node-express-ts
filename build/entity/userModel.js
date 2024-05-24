@@ -18,7 +18,7 @@ class UserModel {
     static create(user) {
         return __awaiter(this, void 0, void 0, function* () {
             const { fname, lname, email, contact } = user;
-            const result = yield database_1.default.query('INSERT INTO user(fname, lname, email, contact) VALUES ($1, $2, $3, $4) RETURNING *', [fname, lname, email, contact]);
+            const result = yield database_1.default.query(`INSERT INTO user(fname, lname, email, contact) VALUES ($1, $2, $3, $4) RETURNING *`, [fname, lname, email, contact]);
             return result.rows[0];
         });
     }

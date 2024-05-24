@@ -16,7 +16,7 @@ class userController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const user = yield userModel_1.UserModel.create(req.body);
-                res.status(201).json(user);
+                res.status(201).send(user);
             }
             catch (error) {
                 res.status(500).json({ message: 'Internal server error' });
